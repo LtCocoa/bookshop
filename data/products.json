@@ -1,0 +1,81 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Dune Messiah",
+      "author": "Frank Herbert",
+      "price": 149.82,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41BVZ25iOGL._SX277_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 2,
+      "title": "The Fellowship of the Ring: Book One in The Lord of the Rings Trilogy",
+      "author": "J. R. R. Tolkien",
+      "price": 19.99,
+      "imageUrl": "https://m.media-amazon.com/images/I/61uFYcoYRRL.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Don Quixote",
+      "author": "Miguel de Cervantes",
+      "price": 21.49,
+      "imageUrl": "https://m.media-amazon.com/images/I/41u9Jedk-mL.jpg"
+    },
+    {
+      "id": 4,
+      "title": "A Farewell to Arms",
+      "author": "Ernest Hemingway",
+      "price": 15.79,
+      "imageUrl": "https://m.media-amazon.com/images/I/51ZTjjN6N6L.jpg"
+    },
+    {
+      "id": 5,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "price": 9.52,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41iers+HLSL._SX326_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Macbeth",
+      "author": "William Shakespeare",
+      "price": 8.56,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51wjSW5Y8sL._SX307_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Crime and Punishment",
+      "author": "Fyodor Dostoevsky",
+      "price": 15.99,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41mIgm6NgyL._SX330_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Complete Stories and Poems of Edgar Allan Poe",
+      "author": "Edgar Allan Poe",
+      "price": 9.58,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51BCF+Zv2jL._SX331_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 9,
+      "title": "The Count of Monte Cristo",
+      "author": "Alexandre Dumas",
+      "price": 26.98,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51p6PYMc9nL._SX302_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Complete Cthulhu Mythos Tales",
+      "author": "H.P. Lovecraft",
+      "price": 30.99,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61YjCwr2fjL._SX309_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 11,
+      "title": "The Adventures of Sherlock Holmes ",
+      "author": "Sir Arthur Conan Doyle",
+      "price": 59.99,
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41xzZQh0isL._SX331_BO1,204,203,200_.jpg"
+    }
+  ]
+}
