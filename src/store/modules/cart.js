@@ -8,9 +8,12 @@ const getters = {
       return prev + curr.product.price * curr.quantity;
     }, 0);
   },
-  getQuantityById: (state) => (id) => {
+  getItemQuantityById: (state) => (id) => {
     let i = state.items.find((item) => item.product.id === id);
     return i.quantity;
+  },
+  getItemsAmount: (state) => {
+    return state.items.length;
   },
 };
 
@@ -28,11 +31,36 @@ const mutations = {
       });
     }
   },
+  removeProductFromCart(state, id) {
+    let product = state.items.find((item) => item.product.id === id);
+    if (product) {
+      state.items.splice(state.items.indexOf(product), 1);
+    }
+  },
 };
 
 const actions = {
-  addProductToCart({ commit }, product) {
+  addProductToCart({ commit, dispatch }, product) {
     commit("pushToCart", { product: product });
+    dispatch(
+      "notifications/addNotification",
+      {
+        type: "success",
+        message: "Product added to cart.",
+      },
+      { root: true }
+    );
+  },
+  removeFromCartById({ commit, dispatch }, id) {
+    commit("removeProductFromCart", id);
+    dispatch(
+      "notifications/addNotification",
+      {
+        type: "success",
+        message: "Product removed from cart.",
+      },
+      { root: true }
+    );
   },
 };
 

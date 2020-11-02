@@ -1,19 +1,28 @@
 <template>
   <div class="cart-item-card">
-    <div class="cart-item-image-wrapper">
-      <img :src="item.imageUrl" alt class="cart-item-image" />
+    <div class="cart-item-main">
+      <div class="cart-item-image-wrapper">
+        <img :src="item.imageUrl" alt class="cart-item-image" />
+      </div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">{{ item.title }}</div>
+        <div>{{ item.author }}</div>
+        <div class="cart-item-price">{{ item.price }}</div>
+        <div>{{ itemQuantity }}</div>
+      </div>
     </div>
-    <div class="cart-item-info">
-      <div class="cart-item-name">{{item.title}}</div>
-      <div>{{item.author}}</div>
-      <div class="cart-item-price">{{item.price}}</div>
-      <div>{{itemQuantity}}</div>
-    </div>
+    <button @click="removeFromCartById(item.id)" class="remove-item-button">
+      <simple-svg
+        :src="require('@/assets/close.svg')"
+        width="30px"
+        height="30px"
+      />
+    </button>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   props: {
     item: {
@@ -22,11 +31,14 @@ export default {
   },
   computed: {
     ...mapGetters("cart", {
-      getQuantity: "getQuantityById",
+      getQuantity: "getItemQuantityById",
     }),
     itemQuantity() {
       return this.getQuantity(this.item.id);
     },
+  },
+  methods: {
+    ...mapActions("cart", ["removeFromCartById"]),
   },
 };
 </script>
@@ -38,10 +50,16 @@ export default {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 10px;
   background-color: rgb(243, 243, 243);
   margin: 10px 0;
   border-radius: 10px;
+}
+
+.cart-item-main {
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .cart-item-image-wrapper {
@@ -64,5 +82,21 @@ export default {
 
 .cart-item-name {
   font-size: 25px;
+}
+
+.remove-item-button {
+  padding: 10px 20px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: rgb(187, 187, 187);
+  border: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  height: 100%;
+  width: 100px;
+}
+
+.remove-item-button:hover {
+  background-color: rgba(219, 44, 44, 0.884);
 }
 </style>

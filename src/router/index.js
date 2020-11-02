@@ -1,12 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import { SimpleSVG } from "vue-simple-svg";
-
 import Home from "@/views/Home";
 import Books from "@/views/Books";
 import Cart from "@/views/Cart";
-
-Vue.component("simple-svg", SimpleSVG);
 
 Vue.use(VueRouter);
 
@@ -30,8 +26,8 @@ const routes = [
   {
     path: "/cart",
     name: "Cart",
-    component: Cart
-  }
+    component: Cart,
+  },
 ];
 
 const router = new VueRouter({

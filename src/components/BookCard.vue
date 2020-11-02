@@ -1,13 +1,13 @@
 <template>
   <div class="book-card">
-    <div class="book-cover-container">
-      <img :src="book.imageUrl" alt="book cover" class="book-cover" />
+    <div class="book-image-wrapper">
+      <img :src="book.imageUrl" alt="book cover" class="book-image" />
     </div>
     <div class="book-info">
-      <div class="book-author">{{book.author}}</div>
-      <div class="book-title">{{book.title}}</div>
+      <div class="book-author">{{ book.author }}</div>
+      <div class="book-title">{{ book.title }}</div>
       <div class="book-card-bottom">
-        <span class="price">{{book.price}}</span>
+        <span class="price">{{ book.price }}</span>
         <button class="cart-add" @click="onClick">Add to Cart</button>
       </div>
     </div>
@@ -27,7 +27,7 @@ export default {
     ...mapActions("cart", ["addProductToCart"]),
     onClick() {
       this.addProductToCart(this.book);
-    }
+    },
   },
 };
 </script>
@@ -49,16 +49,16 @@ export default {
   box-shadow: 0px 0px 12px 0px rgb(187, 187, 187);
 }
 
-.book-card:hover .book-cover {
+.book-card:hover .book-image {
   transform: scale(1.07);
 }
 
-.book-cover-container {
+.book-image-wrapper {
   height: 250px;
   margin: 10px 0;
 }
 
-.book-cover {
+.book-image {
   object-fit: contain;
   width: 100%;
   height: 100%;

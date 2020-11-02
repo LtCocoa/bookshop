@@ -4,18 +4,41 @@
       <div class="header__top">
         <div class="logo-container">
           <router-link to="/">
-            <simple-svg :src="require('@/assets/book.svg')" width="90px" height="90px" />
+            <simple-svg
+              :src="require('@/assets/book.svg')"
+              width="90px"
+              height="90px"
+            />
           </router-link>
         </div>
         <div class="search-container">
           <input type="text" class="search-bar" />
           <button class="search-button">
-            <simple-svg :src="require('@/assets/search-solid.svg')" width="20px" height="20px" />
+            <simple-svg
+              :src="require('@/assets/search-solid.svg')"
+              fill-class-name="fill-to-change"
+              width="20px"
+              height="20px"
+            />
           </button>
         </div>
         <div class="actions-container">
-          <router-link to="/auth" class="actions__link">profile</router-link>
-          <router-link to="/cart" class="actions__link">cart</router-link>
+          <router-link to="/auth" class="actions__link">
+            <simple-svg
+              :src="require('@/assets/user.svg')"
+              width="30px"
+              height="30px"
+            />
+          </router-link>
+          <router-link to="/cart" class="actions__link cart-icon">
+            <simple-svg
+              :src="require('@/assets/cart.svg')"
+              fill-class-name="fill-to-change"
+              width="30px"
+              height="30px"
+            />
+            <div class="cart-icon-counter">{{ getItemsAmount }}</div>
+          </router-link>
         </div>
       </div>
       <div class="header__bottom">
@@ -33,11 +56,24 @@
       </transition>
     </div>
     <footer></footer>
+    <notification-list />
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import NotificationList from "@/components/NotificationList";
+
 export default {
+  components: {
+    NotificationList,
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapGetters("cart", ["getItemsAmount"]),
+  },
   methods: {
     loadProducts() {
       let books = require("../data/products.json")["books"];
@@ -73,7 +109,6 @@ export default {
 header {
   display: flex;
   flex-direction: column;
-  position: fixed;
   z-index: 1000;
 }
 
@@ -120,17 +155,37 @@ header {
 
 .actions-container {
   flex: 1;
+  display: flex;
 }
 
 .actions__link {
   text-decoration: none;
   margin: 0 10px;
-  padding: 15px 25px;
+  padding: 10px 25px;
   border-radius: 10px;
 }
 
 .actions__link:hover {
-  background-color: rgb(255, 120, 120);
+  background-color: rgb(255, 234, 234);
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-icon-counter {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 10px;
+  top: 5px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  background-color: rgb(255, 111, 111);
+  border-radius: 50%;
 }
 
 .menu {
@@ -187,5 +242,9 @@ footer {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+.fill-to-change {
+  fill: black;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="alert-container" v-if="isVisible">
-    <span>{{message}}</span>
+    <span>{{ message }}</span>
   </div>
 </template>
 

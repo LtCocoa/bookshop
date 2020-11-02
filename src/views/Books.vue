@@ -1,6 +1,10 @@
 <template>
   <transition-group name="fade" tag="div" class="books-container">
-    <book-card v-for="(book, index) in books" :key="index" :book="book"></book-card>
+    <book-card
+      v-for="(book, index) in books"
+      :key="index"
+      :book="book"
+    ></book-card>
   </transition-group>
 </template>
 
