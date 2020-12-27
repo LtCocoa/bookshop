@@ -3,9 +3,9 @@
     <div class="notification-status">
       <simple-svg :src="setNotificationType" width="25px" height="25px" />
     </div>
-    <span class="notification-text">
+    <div class="notification-text">
       {{ notification.message }}
-    </span>
+    </div>
   </div>
 </template>
 
@@ -56,18 +56,21 @@ export default {
   height: 50px;
   width: 100%;
   border-radius: 5px;
-  display: flex;
   align-items: center;
   background-color: rgb(247, 237, 105);
+  display: flex;
 }
 
 .notification-status {
   margin: 0 10px;
-  flex-basis: 25px;
+  display: flex;
+  justify-content: center;
+  width: 30px;
 }
 
 .notification-text {
   font-size: 19px;
+  flex: 10;
 }
 
 .notification-success {

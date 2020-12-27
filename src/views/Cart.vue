@@ -7,7 +7,11 @@
           v-for="item in cart"
           :key="item.product.id"
           :item="item.product"
-        ></cart-item-card>
+        >
+          <template slot-scope="{ item }">
+            {{ item.title }}
+          </template>
+        </cart-item-card>
       </transition-group>
     </div>
     <div class="checkout-wrapper">

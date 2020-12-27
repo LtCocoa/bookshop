@@ -19,9 +19,7 @@ export default {
   computed: mapState({
     books: (state) => state.books.all,
   }),
-  created() {
-    // console.log(this.books);
-  },
+  created() {},
 };
 </script>
 
@@ -29,6 +27,12 @@ export default {
 .books-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.books-container::after {
+  content: '';
+  flex: auto;
 }
 
 .fade-enter-active,

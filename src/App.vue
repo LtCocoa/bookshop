@@ -43,6 +43,7 @@
       </div>
       <div class="header__bottom">
         <nav class="menu">
+          <router-link to="/" exact class="menu__link">Home</router-link>
           <router-link to="/books" class="menu__link">Books</router-link>
           <router-link to="/events" class="menu__link">Events</router-link>
           <router-link to="/sale" class="menu__link">Sale</router-link>
@@ -63,6 +64,7 @@
 <script>
 import { mapGetters } from "vuex";
 import NotificationList from "@/components/NotificationList";
+import axios from "axios";
 
 export default {
   components: {
@@ -76,15 +78,8 @@ export default {
   },
   methods: {
     loadProducts() {
-      let books = require("../data/products.json")["books"];
-      let halfBooks = books.filter((book) => {
-        if (book.price > 13) {
-          return Object.assign({}, book);
-        }
-      });
-
-      this.$store.dispatch("loadBooks", halfBooks);
-
+      const books = require("../data/products.json")["books"];
+      
       setTimeout(() => {
         this.$store.dispatch("loadBooks", books);
       }, 5000);
@@ -92,6 +87,9 @@ export default {
   },
   created() {
     this.loadProducts();
+    axios.get('api/')
+        .then(data => console.log(data))
+        .catch(error => console.log(error.message));
   },
 };
 </script>

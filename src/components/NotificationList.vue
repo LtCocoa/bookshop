@@ -1,5 +1,5 @@
 <template>
-  <transition-group class="notifications-container" name="notif">
+  <transition-group class="notifications-container" name="notif" tag="div">
     <notification
       v-for="notification in notifications"
       :key="notification.id"
@@ -29,9 +29,8 @@ export default {
 .notifications-container {
   position: fixed;
   bottom: 25px;
-  right: 100px;
+  right: 5%;
   width: 350px;
-  overflow: hidden;
 }
 
 .notif-move {

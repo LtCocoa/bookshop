@@ -5,9 +5,13 @@
         <img :src="item.imageUrl" alt class="cart-item-image" />
       </div>
       <div class="cart-item-info">
-        <div class="cart-item-name">{{ item.title }}</div>
+        <div class="cart-item-name">
+          <slot :item="item"></slot>
+        </div>
         <div>{{ item.author }}</div>
-        <div class="cart-item-price">{{ item.price }}</div>
+        <div class="cart-item-price">
+          {{ item.price }}
+        </div>
         <div>{{ itemQuantity }}</div>
       </div>
     </div>
