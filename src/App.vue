@@ -48,6 +48,7 @@
           <router-link to="/events" class="menu__link">Events</router-link>
           <router-link to="/sale" class="menu__link">Sale</router-link>
           <router-link to="/about" class="menu__link">About</router-link>
+          <router-link to="/users" class="menu__link">Users</router-link>
         </nav>
       </div>
     </header>
@@ -71,7 +72,9 @@ export default {
     NotificationList,
   },
   data() {
-    return {};
+    return {
+      userPosts: null
+    };
   },
   computed: {
     ...mapGetters("cart", ["getItemsAmount"]),
@@ -88,7 +91,7 @@ export default {
   created() {
     this.loadProducts();
     axios.get('api/')
-        .then(data => console.log(data))
+        .then(response => console.log(response.data))
         .catch(error => console.log(error.message));
   },
 };

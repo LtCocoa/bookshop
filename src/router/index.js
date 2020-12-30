@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "@/views/Home";
 import Books from "@/views/Books";
 import Cart from "@/views/Cart";
+import Users from "@/views/Users";
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,11 @@ const routes = [
     name: "Cart",
     component: Cart,
   },
+  {
+    path: "/users",
+    name: "Users",
+    component: Users,
+  }
 ];
 
 const router = new VueRouter({
