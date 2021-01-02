@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import Home from "@/views/Home";
 import Books from "@/views/Books";
 import Cart from "@/views/Cart";
-import Users from "@/views/Users";
+import Posts from "@/views/Posts";
 
 Vue.use(VueRouter);
 
@@ -30,9 +30,9 @@ const routes = [
     component: Cart,
   },
   {
-    path: "/users",
-    name: "Users",
-    component: Users,
+    path: "/posts",
+    name: "Posts",
+    component: Posts,
   }
 ];
 

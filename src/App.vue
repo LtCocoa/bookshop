@@ -48,7 +48,7 @@
           <router-link to="/events" class="menu__link">Events</router-link>
           <router-link to="/sale" class="menu__link">Sale</router-link>
           <router-link to="/about" class="menu__link">About</router-link>
-          <router-link to="/users" class="menu__link">Users</router-link>
+          <router-link to="/posts" class="menu__link">Posts</router-link>
         </nav>
       </div>
     </header>
