@@ -3,7 +3,11 @@ const state = () => ({
   areLoaded: false,
 });
 
-const getters = {};
+const getters = {
+  getBookById(id) {
+    return state.books.find(item => item.id === id);
+  }
+};
 
 const mutations = {
   setBooks(state, products) {

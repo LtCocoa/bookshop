@@ -1,5 +1,5 @@
 <template>
-  <div class="book-card">
+  <div class="book-card" @click="onBookCardClick">
     <div class="book-image-wrapper">
       <img :src="book.imageUrl" alt="book cover" class="book-image" />
     </div>
@@ -8,7 +8,7 @@
       <div class="book-title">{{ book.title }}</div>
       <div class="book-card-bottom">
         <span class="price">{{ book.price }}</span>
-        <button class="cart-add" @click="onClick">Add to Cart</button>
+        <button class="cart-add" @click.stop="onClick">Add to Cart</button>
       </div>
     </div>
   </div>
@@ -18,6 +18,7 @@
 import { mapActions } from "vuex";
 
 export default {
+  name: 'book-card',
   props: {
     book: {
       type: Object,
@@ -28,6 +29,9 @@ export default {
     onClick() {
       this.addProductToCart(this.book);
     },
+    onBookCardClick() {
+      this.$router.push({ name: 'Book', params: { bookId: this.book.id } });
+    }
   },
 };
 </script>
@@ -37,9 +41,7 @@ export default {
   width: 250px;
   padding: 15px;
   margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: inline-block;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease-out;

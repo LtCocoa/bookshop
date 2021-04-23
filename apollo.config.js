@@ -12,7 +12,7 @@ module.exports = {
     service: {
       name: 'my-app',
       // URL to the GraphQL API
-      url: 'http://192.168.1.65:8080/graphql',
+      url: 'http://localhost:8080/graphql',
     },
     includes: ['src/**/*.{js,jsx,ts,tsx,vue,gql}']
   }

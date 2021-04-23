@@ -4,6 +4,7 @@ import Home from "@/views/Home";
 import Books from "@/views/Books";
 import Cart from "@/views/Cart";
 import Posts from "@/views/Posts";
+import Book from "@/views/Book";
 
 Vue.use(VueRouter);
 
@@ -23,6 +24,13 @@ const routes = [
     path: "/books",
     name: "Books",
     component: Books,
+    children: []
+  },
+  {
+    path: "/book/:bookId",
+    name: "Book",
+    component: Book,
+    props: true
   },
   {
     path: "/cart",

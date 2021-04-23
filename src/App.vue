@@ -65,7 +65,6 @@
 <script>
 import { mapGetters } from "vuex";
 import NotificationList from "@/components/NotificationList";
-import axios from "axios";
 
 export default {
   components: {
@@ -90,9 +89,6 @@ export default {
   },
   created() {
     this.loadProducts();
-    axios.get('api/')
-        .then(response => console.log(response.data))
-        .catch(error => console.log(error.message));
   },
 };
 </script>
@@ -105,6 +101,7 @@ export default {
   color: #2c3e50;
   max-width: 1400px;
   margin: 0 auto;
+  outline: none;
 }
 
 header {

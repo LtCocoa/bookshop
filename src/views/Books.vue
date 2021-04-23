@@ -16,18 +16,22 @@ export default {
   components: {
     BookCard,
   },
-  computed: mapState({
-    books: (state) => state.books.all,
-  }),
+  computed: {
+    ...mapState({
+      books: (state) => state.books.all,
+    })
+  },
+  methods: {
+    
+  },
   created() {},
 };
 </script>
 
 <style scoped>
 .books-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  width: 1150px;
+  margin: 0 auto;
 }
 
 .books-container::after {
