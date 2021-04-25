@@ -2,6 +2,8 @@
   <transition-group name="fade" tag="div" class="books-container">
     <book-card
       v-for="(book, index) in books"
+      test="123"
+      style="d"
       :key="index"
       :book="book"
     ></book-card>
@@ -24,7 +26,20 @@ export default {
   methods: {
     
   },
-  created() {},
+  created() {
+    const obj = {};
+    Object.defineProperty(obj, 'data', {
+      get() {
+        console.log('getter');
+        return 1;
+      },
+      set(newValue) {
+        console.log('setter ', newValue);
+      }
+    });
+    console.log(obj.data);
+    obj.data = 2;
+  },
 };
 </script>
 
