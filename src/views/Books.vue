@@ -22,24 +22,7 @@ export default {
     ...mapState({
       books: (state) => state.books.all,
     })
-  },
-  methods: {
-    
-  },
-  created() {
-    const obj = {};
-    Object.defineProperty(obj, 'data', {
-      get() {
-        console.log('getter');
-        return 1;
-      },
-      set(newValue) {
-        console.log('setter ', newValue);
-      }
-    });
-    console.log(obj.data);
-    obj.data = 2;
-  },
+  }
 };
 </script>
 
