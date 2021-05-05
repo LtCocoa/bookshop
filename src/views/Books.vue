@@ -21,8 +21,8 @@ export default {
   computed: {
     ...mapState({
       books: (state) => state.books.all,
-    })
-  }
+    }),
+  },
 };
 </script>
 
@@ -33,7 +33,7 @@ export default {
 }
 
 .books-container::after {
-  content: '';
+  content: "";
   flex: auto;
 }
 

@@ -1,14 +1,18 @@
 <template>
   <div class="book-card" @click="onBookCardClick">
-    <div class="book-image-wrapper">
-      <img :src="book.imageUrl" alt="book cover" class="book-image" />
+    <div class="book-card__image-wrapper">
+      <img
+        :src="book.imageUrl"
+        alt="book cover"
+        class="book-card__book-image"
+      />
     </div>
     <div class="book-info">
       <div class="book-author">{{ book.author }}</div>
       <div class="book-title">{{ book.title }}</div>
-      <div class="book-card-bottom">
+      <div class="book-card-footer">
         <span class="price">{{ book.price }}</span>
-        <button class="cart-add" @click.stop="onClick">Add to Cart</button>
+        <button class="button" @click.stop="onClick">Add to Cart</button>
       </div>
     </div>
   </div>
@@ -18,7 +22,7 @@
 import { mapActions } from "vuex";
 
 export default {
-  name: 'book-card',
+  name: "book-card",
   props: {
     book: {
       type: Object,
@@ -30,8 +34,8 @@ export default {
       this.addProductToCart(this.book);
     },
     onBookCardClick() {
-      this.$router.push({ name: 'Book', params: { bookId: this.book.id } });
-    }
+      this.$router.push({ name: "Book", params: { bookId: this.book.id } });
+    },
   },
 };
 </script>
@@ -51,16 +55,16 @@ export default {
   box-shadow: 0px 0px 12px 0px rgb(187, 187, 187);
 }
 
-.book-card:hover .book-image {
+.book-card:hover .book-card__book-image {
   transform: scale(1.07);
 }
 
-.book-image-wrapper {
+.book-card__image-wrapper {
   height: 250px;
   margin: 10px 0;
 }
 
-.book-image {
+.book-card__book-image {
   object-fit: contain;
   width: 100%;
   height: 100%;
@@ -88,7 +92,7 @@ export default {
   overflow: hidden;
 }
 
-.book-card-bottom {
+.book-card-footer {
   display: flex;
 }
 
@@ -100,22 +104,5 @@ export default {
 
 .price::before {
   content: "$";
-}
-
-.cart-add {
-  flex: 1;
-  height: 30px;
-  border: 0;
-  border-radius: 5px;
-  background-color: rgb(175, 194, 255);
-  color: rgb(240, 240, 240);
-  cursor: pointer;
-  transition: all 0.5s ease-out;
-  font-size: 17px;
-}
-
-.cart-add:hover {
-  background-color: rgb(36, 87, 255);
-  box-shadow: 0px 0px 15px 0px rgb(167, 167, 167);
 }
 </style>

@@ -11,8 +11,8 @@
 
 <script>
 import { mapActions } from "vuex";
-import checkSVG from "@/assets/check.svg";
-import errorSVG from "@/assets/error.svg";
+import checkSVG from "@/assets/svg/check.svg";
+import errorSVG from "@/assets/svg/error.svg";
 
 export default {
   data() {

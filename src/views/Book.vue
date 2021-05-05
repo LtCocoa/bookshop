@@ -1,28 +1,39 @@
 <template>
-  <div>Book {{ bookId }} page</div>
+  <div>
+    <div class="book-container">
+      <div class="book-image-wrapper">
+        <img :src="book.imageUrl" alt="book cover" />
+      </div>
+      <div>
+        <h2>{{ book.author }}</h2>
+        <div>{{ book.title }}</div>
+      </div>
+    </div>
+    <button class="button" @click.stop="onClick">Add to Cart</button>
+  </div>
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
 
 export default {
-  name: 'book',
+  name: "book",
   props: {
     bookId: {
       type: Number,
       default: null,
       required: true,
-      validator: id => id >= 0
-    }
+      validator: (id) => id >= 0,
+    },
   },
   data() {
     return {
       book: null,
-    }
+    };
   },
   created() {
-    this.book = this.books.find(item => item.id === this.bookId);
-    
+    this.book = this.books.find((item) => item.id === this.bookId);
+
     if (!this.book) {
       this.addNotification({
         type: "error",
@@ -38,10 +49,30 @@ export default {
   },
   methods: {
     ...mapActions("notifications", ["addNotification"]),
-  }
-}
+    ...mapActions("cart", ["addProductToCart"]),
+    onClick() {
+      this.addProductToCart(this.book);
+    },
+  },
+};
 </script>
 
 <style>
+.button {
+  margin: 5px 0;
+}
 
+.book-container {
+  display: flex;
+  padding: 10px;
+}
+
+.book-image-wrapper {
+  height: 400px;
+  margin: 0 10px;
+}
+
+.book-image-wrapper img {
+  height: 100%;
+}
 </style>

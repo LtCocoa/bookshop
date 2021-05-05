@@ -17,7 +17,7 @@
     </div>
     <button @click="removeFromCartById(item.id)" class="remove-item-button">
       <simple-svg
-        :src="require('@/assets/close.svg')"
+        :src="require('@/assets/svg/close.svg')"
         width="30px"
         height="30px"
       />

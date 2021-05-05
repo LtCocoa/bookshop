@@ -5,7 +5,7 @@
         <div class="logo-container">
           <router-link to="/">
             <simple-svg
-              :src="require('@/assets/book.svg')"
+              :src="require('@/assets/svg/book.svg')"
               width="90px"
               height="90px"
             />
@@ -15,7 +15,7 @@
           <input type="text" class="search-bar" />
           <button class="search-button">
             <simple-svg
-              :src="require('@/assets/search-solid.svg')"
+              :src="require('@/assets/svg/search-solid.svg')"
               fill-class-name="fill-to-change"
               width="20px"
               height="20px"
@@ -25,14 +25,14 @@
         <div class="actions-container">
           <router-link to="/auth" class="actions__link">
             <simple-svg
-              :src="require('@/assets/user.svg')"
+              :src="require('@/assets/svg/user.svg')"
               width="30px"
               height="30px"
             />
           </router-link>
           <router-link to="/cart" class="actions__link cart-icon">
             <simple-svg
-              :src="require('@/assets/cart.svg')"
+              :src="require('@/assets/svg/cart.svg')"
               fill-class-name="fill-to-change"
               width="30px"
               height="30px"
@@ -72,7 +72,7 @@ export default {
   },
   data() {
     return {
-      userPosts: null
+      userPosts: null,
     };
   },
   computed: {
@@ -81,7 +81,7 @@ export default {
   methods: {
     loadProducts() {
       const books = require("../data/products.json")["books"];
-      
+
       setTimeout(() => {
         this.$store.dispatch("loadBooks", books);
       }, 5000);
