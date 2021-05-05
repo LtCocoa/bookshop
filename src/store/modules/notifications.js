@@ -20,10 +20,10 @@ const mutations = {
 
 const actions = {
   addNotification({ commit }, notification) {
-    commit("pushNotification", notification);
+    commit('pushNotification', notification);
   },
   removeNotification({ commit }, notification) {
-    commit("removeNotification", notification);
+    commit('removeNotification', notification);
   },
 };
 

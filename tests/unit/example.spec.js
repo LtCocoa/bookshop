@@ -1,6 +1,6 @@
-import { shallowMount, createLocalVue } from "@vue/test-utils";
-import Book from "@/views/Book";
-import Vuex from "vuex";
+import { shallowMount, createLocalVue } from '@vue/test-utils';
+import Book from '@/views/Book';
+import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 
 const localVue = createLocalVue();
@@ -8,9 +8,9 @@ const localVue = createLocalVue();
 localVue.use(Vuex);
 localVue.use(VueRouter);
 
-const router = new VueRouter()
+const router = new VueRouter();
 
-describe("Book", () => {
+describe('Book', () => {
   let actions;
   let store;
 
@@ -21,12 +21,12 @@ describe("Book", () => {
     store = new Vuex.Store({
       actions,
       state: {
-        all: []
-      }
+        all: [],
+      },
     });
   });
 
-  it("renders props when passed", () => {
+  it('renders props when passed', () => {
     const bookId = 1;
 
     const wrapper = shallowMount(Book, {
@@ -36,7 +36,7 @@ describe("Book", () => {
       computed: {
         books() {
           return [];
-        }
+        },
       },
       propsData: { bookId: 1 },
     });

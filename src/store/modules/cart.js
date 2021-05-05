@@ -41,23 +41,23 @@ const mutations = {
 
 const actions = {
   addProductToCart({ commit, dispatch }, product) {
-    commit("pushToCart", { product: product });
+    commit('pushToCart', { product: product });
     dispatch(
-      "notifications/addNotification",
+      'notifications/addNotification',
       {
-        type: "success",
-        message: "Product added to cart.",
+        type: 'success',
+        message: 'Product added to cart.',
       },
       { root: true }
     );
   },
   removeFromCartById({ commit, dispatch }, id) {
-    commit("removeProductFromCart", id);
+    commit('removeProductFromCart', id);
     dispatch(
-      "notifications/addNotification",
+      'notifications/addNotification',
       {
-        type: "success",
-        message: "Product removed from cart.",
+        type: 'success',
+        message: 'Product removed from cart.',
       },
       { root: true }
     );

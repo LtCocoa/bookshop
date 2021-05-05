@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import Notification from "./Notification";
+import { mapState } from 'vuex';
+import Notification from './Notification';
 
 export default {
   components: {

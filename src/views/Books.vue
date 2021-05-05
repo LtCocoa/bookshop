@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import BookCard from "@/components/BookCard";
+import { mapState } from 'vuex';
+import BookCard from '@/components/BookCard';
 
 export default {
   components: {

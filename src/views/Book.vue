@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapState } from 'vuex';
 
 export default {
-  name: "book",
+  name: 'book',
   props: {
     bookId: {
       type: Number,
@@ -36,7 +36,7 @@ export default {
 
     if (!this.book) {
       this.addNotification({
-        type: "error",
+        type: 'error',
         message: `Could not find book with id ${this.bookId}.`,
       });
       this.$router.go(-1);
@@ -46,10 +46,13 @@ export default {
     ...mapState({
       books: (state) => state.books.all,
     }),
+    changeBook() {
+      return this.book;
+    }
   },
   methods: {
-    ...mapActions("notifications", ["addNotification"]),
-    ...mapActions("cart", ["addProductToCart"]),
+    ...mapActions('notifications', ['addNotification']),
+    ...mapActions('cart', ['addProductToCart']),
     onClick() {
       this.addProductToCart(this.book);
     },

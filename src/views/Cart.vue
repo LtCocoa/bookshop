@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import CartItemCard from "@/components/CartItemCard";
-import { mapState, mapGetters } from "vuex";
+import CartItemCard from '@/components/CartItemCard';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   components: {
@@ -38,7 +38,7 @@ export default {
     ...mapState({
       cart: (state) => state.cart.items,
     }),
-    ...mapGetters("cart", ["totalPrice", "getItemsAmount"]),
+    ...mapGetters('cart', ['totalPrice', 'getItemsAmount']),
     isCartEmpty() {
       return this.getItemsAmount === 0;
     },

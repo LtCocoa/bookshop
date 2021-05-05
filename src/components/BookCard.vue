@@ -19,22 +19,22 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
 
 export default {
-  name: "book-card",
+  name: 'book-card',
   props: {
     book: {
       type: Object,
     },
   },
   methods: {
-    ...mapActions("cart", ["addProductToCart"]),
+    ...mapActions('cart', ['addProductToCart']),
     onClick() {
       this.addProductToCart(this.book);
     },
     onBookCardClick() {
-      this.$router.push({ name: "Book", params: { bookId: this.book.id } });
+      this.$router.push({ name: 'Book', params: { bookId: this.book.id } });
     },
   },
 };

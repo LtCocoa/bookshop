@@ -24,13 +24,13 @@ const routes = [
     path: "/books",
     name: "Books",
     component: Books,
-    children: []
+    children: [],
   },
   {
     path: "/book/:bookId",
     name: "Book",
     component: Book,
-    props: true
+    props: true,
   },
   {
     path: "/cart",
@@ -41,7 +41,7 @@ const routes = [
     path: "/posts",
     name: "Posts",
     component: Posts,
-  }
+  },
 ];
 
 const router = new VueRouter({

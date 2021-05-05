@@ -63,8 +63,8 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import NotificationList from "@/components/NotificationList";
+import { mapGetters } from 'vuex';
+import NotificationList from '@/components/NotificationList';
 
 export default {
   components: {
@@ -76,14 +76,14 @@ export default {
     };
   },
   computed: {
-    ...mapGetters("cart", ["getItemsAmount"]),
+    ...mapGetters('cart', ['getItemsAmount']),
   },
   methods: {
     loadProducts() {
-      const books = require("../data/products.json")["books"];
+      const books = require('../data/products.json')['books'];
 
       setTimeout(() => {
-        this.$store.dispatch("loadBooks", books);
+        this.$store.dispatch('loadBooks', books);
       }, 5000);
     },
   },
