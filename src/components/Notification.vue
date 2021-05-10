@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
-import checkSVG from "@/assets/svg/check.svg";
-import errorSVG from "@/assets/svg/error.svg";
+import { mapActions } from 'vuex';
+import checkSVG from '@/assets/svg/check.svg';
+import errorSVG from '@/assets/svg/error.svg';
 
 export default {
   data() {
@@ -39,7 +39,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions("notifications", ["removeNotification"]),
+    ...mapActions('notifications', ['removeNotification']),
   },
   created() {
     setTimeout(() => {

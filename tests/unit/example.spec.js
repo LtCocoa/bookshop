@@ -27,6 +27,7 @@ describe('Book', () => {
   });
 
   it('renders props when passed', () => {
+    // eslint-disable-next-line no-unused-vars
     const bookId = 1;
 
     const wrapper = shallowMount(Book, {

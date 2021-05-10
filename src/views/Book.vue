@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="book-wrapper">
     <div class="book-container">
       <div class="book-image-wrapper">
         <img :src="book.imageUrl" alt="book cover" />
@@ -60,7 +60,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.book-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .button {
   margin: 5px 0;
 }
