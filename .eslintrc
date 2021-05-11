@@ -34,6 +34,7 @@
     "semi": [
       "warn",
       "always"
-    ]
+    ],
+    "vue/experimental-script-setup-vars": 0
   }
 }

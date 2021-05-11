@@ -84,7 +84,7 @@ export default {
 
       setTimeout(() => {
         this.$store.dispatch('loadBooks', books);
-      }, 5000);
+      }, 1000);
     },
   },
   created() {
@@ -93,7 +93,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -236,7 +236,7 @@ footer {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.4s;
+  transition: opacity 0.1s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;

@@ -1,15 +1,14 @@
 <template>
-  <div class="book-wrapper">
-    <div class="book-container">
-      <div class="book-image-wrapper">
-        <img :src="book.imageUrl" alt="book cover" />
-      </div>
-      <div>
-        <h2>{{ book.author }}</h2>
-        <div>{{ book.title }}</div>
-      </div>
+  <div class="book-container" v-if="book">
+    <div class="book-image-wrapper">
+      <img :src="book.imageUrl" alt="book cover" />
     </div>
-    <button class="button" @click.stop="onClick">Add to Cart</button>
+    <div class="book-info">
+      <div class="text-large">{{ book.title }}</div>
+      <div>by {{ book.author }}</div>
+      <p class="book-description">{{ book.description }}</p>
+      <button class="button" @click.stop="onClick">Add to Cart</button>
+    </div>
   </div>
 </template>
 
@@ -20,7 +19,7 @@ export default {
   name: 'book',
   props: {
     bookId: {
-      type: Number,
+      type: [Number, String],
       default: null,
       required: true,
       validator: (id) => id >= 0,
@@ -39,7 +38,7 @@ export default {
         type: 'error',
         message: `Could not find book with id ${this.bookId}.`,
       });
-      this.$router.go(-1);
+      this.$router.push({ name: 'Books' });
     }
   },
   computed: {
@@ -61,18 +60,11 @@ export default {
 </script>
 
 <style scoped>
-.book-wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.button {
-  margin: 5px 0;
-}
-
 .book-container {
   display: flex;
   padding: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .book-image-wrapper {
@@ -82,5 +74,23 @@ export default {
 
 .book-image-wrapper img {
   height: 100%;
+}
+
+.book-info {
+  padding: 10px;
+}
+
+.button {
+  margin: 5px 0;
+}
+
+.book-author {
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 38px;
+}
+
+.book-description {
+  white-space: pre-line;
 }
 </style>
