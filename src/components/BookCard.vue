@@ -8,10 +8,13 @@
       />
     </div>
     <div class="book-info">
+      <rating 
+        :current="book.rating"
+      />
       <div class="book-author">{{ book.author }}</div>
-      <div class="book-title">{{ book.title }}</div>
+      <div class="book-title text-medium">{{ book.title }}</div>
       <div class="book-card-footer">
-        <span class="price">{{ book.price }}</span>
+        <span class="price-tag">{{ book.price }}</span>
         <button class="button" @click.stop="onClick">Add to Cart</button>
       </div>
     </div>
@@ -19,22 +22,26 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
+import Rating from '@/components/Rating';
 
 export default {
-  name: "book-card",
+  name: 'book-card',
+  components: {
+    Rating
+  },
   props: {
     book: {
       type: Object,
     },
   },
   methods: {
-    ...mapActions("cart", ["addProductToCart"]),
+    ...mapActions('cart', ['addProductToCart']),
     onClick() {
       this.addProductToCart(this.book);
     },
     onBookCardClick() {
-      this.$router.push({ name: "Book", params: { bookId: this.book.id } });
+      this.$router.push({ name: 'Book', params: { bookId: this.book.id } });
     },
   },
 };
@@ -42,9 +49,8 @@ export default {
 
 <style scoped>
 .book-card {
-  width: 250px;
+  width: 220px;
   padding: 15px;
-  margin: 10px;
   display: inline-block;
   border-radius: 5px;
   cursor: pointer;
@@ -73,15 +79,13 @@ export default {
 
 .book-info {
   flex: 1;
-  padding: 5px;
+  margin: 5px;
 }
 
 .book-title {
-  font-size: 19px;
-  font-weight: 600;
   height: 52px;
-  padding: 5px 0px 5px;
-  margin-bottom: 5px;
+  margin: 5px 0 25px;
+  line-height: 1.6rem;
   overflow: hidden;
   position: relative;
 }
@@ -96,13 +100,15 @@ export default {
   display: flex;
 }
 
-.price {
+.price-tag {
   color: rgb(27, 5, 5);
   font-size: 19px;
   flex: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
-.price::before {
+.price-tag::before {
   content: "$";
 }
 </style>

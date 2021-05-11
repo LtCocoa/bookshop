@@ -1,51 +1,51 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "@/views/Home";
-import Books from "@/views/Books";
-import Cart from "@/views/Cart";
-import Posts from "@/views/Posts";
-import Book from "@/views/Book";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '@/views/Home';
+import Books from '@/views/Books';
+import Cart from '@/views/Cart';
+import Posts from '@/views/Posts';
+import Book from '@/views/Book';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
+    path: '/',
+    name: 'Home',
     component: Home,
   },
   {
-    path: "/about",
-    name: "About",
+    path: '/about',
+    name: 'About',
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+      import(/* webpackChunkName: "about" */ '../views/About.vue'),
   },
   {
-    path: "/books",
-    name: "Books",
+    path: '/books',
+    name: 'Books',
     component: Books,
-    children: []
+    children: [],
   },
   {
-    path: "/book/:bookId",
-    name: "Book",
+    path: '/book/:bookId',
+    name: 'Book',
     component: Book,
-    props: true
+    props: true,
   },
   {
-    path: "/cart",
-    name: "Cart",
+    path: '/cart',
+    name: 'Cart',
     component: Cart,
   },
   {
-    path: "/posts",
-    name: "Posts",
+    path: '/posts',
+    name: 'Posts',
     component: Posts,
-  }
+  },
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   routes,
 });

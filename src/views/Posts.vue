@@ -27,10 +27,10 @@
 </template>
 
 <script>
-import gql from "graphql-tag";
+import gql from 'graphql-tag';
 
 export default {
-  name: "user-posts",
+  name: 'user-posts',
   props: {
     user: {
       type: Object,
@@ -39,7 +39,7 @@ export default {
   },
   data() {
     return {
-      postText: "",
+      postText: '',
     };
   },
   created() {
@@ -62,7 +62,7 @@ export default {
           `,
           variables: {
             input: {
-              title: "new post",
+              title: 'new post',
               text: postText,
               authorId: 31,
             },
@@ -70,7 +70,7 @@ export default {
         })
         .then(() => {
           this.$apollo.queries.posts.refetch();
-          this.postText = "";
+          this.postText = '';
         });
     },
     deletePost(id) {

@@ -5,8 +5,8 @@ const state = () => ({
 
 const getters = {
   getBookById(id) {
-    return state.books.find(item => item.id === id);
-  }
+    return state.books.find((item) => item.id === id);
+  },
 };
 
 const mutations = {
@@ -18,7 +18,7 @@ const mutations = {
 
 const actions = {
   loadBooks({ commit }, products) {
-    commit("setBooks", products);
+    commit('setBooks', products);
   },
 };
 

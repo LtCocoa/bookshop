@@ -9,7 +9,7 @@ export default {
   props: {
     message: {
       type: String,
-      default: "default alert",
+      default: 'default alert',
     },
     isVisible: {
       type: Boolean,

@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
 export default {
   props: {
     item: {
@@ -34,15 +34,15 @@ export default {
     },
   },
   computed: {
-    ...mapGetters("cart", {
-      getQuantity: "getItemQuantityById",
+    ...mapGetters('cart', {
+      getQuantity: 'getItemQuantityById',
     }),
     itemQuantity() {
       return this.getQuantity(this.item.id);
     },
   },
   methods: {
-    ...mapActions("cart", ["removeFromCartById"]),
+    ...mapActions('cart', ['removeFromCartById']),
   },
 };
 </script>

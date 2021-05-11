@@ -63,8 +63,8 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import NotificationList from "@/components/NotificationList";
+import { mapGetters } from 'vuex';
+import NotificationList from '@/components/NotificationList';
 
 export default {
   components: {
@@ -76,15 +76,15 @@ export default {
     };
   },
   computed: {
-    ...mapGetters("cart", ["getItemsAmount"]),
+    ...mapGetters('cart', ['getItemsAmount']),
   },
   methods: {
     loadProducts() {
-      const books = require("../data/products.json")["books"];
+      const books = require('../data/products.json')['books'];
 
       setTimeout(() => {
-        this.$store.dispatch("loadBooks", books);
-      }, 5000);
+        this.$store.dispatch('loadBooks', books);
+      }, 1000);
     },
   },
   created() {
@@ -93,7 +93,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -236,7 +236,7 @@ footer {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.4s;
+  transition: opacity 0.1s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
