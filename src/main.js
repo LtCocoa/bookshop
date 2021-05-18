@@ -5,6 +5,7 @@ import store from './store';
 import { SimpleSVG } from 'vue-simple-svg';
 import { createProvider } from './vue-apollo';
 import './assets/css/global.css';
+import './assets/tailwind.css';
 
 Vue.component('simple-svg', SimpleSVG);
 
@@ -14,5 +15,5 @@ new Vue({
   router,
   store,
   apolloProvider: createProvider(),
-  render: (h) => h(App),
+  render: (h) => h(App)
 }).$mount('#app');

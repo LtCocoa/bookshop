@@ -4,7 +4,7 @@
       <img :src="book.imageUrl" alt="book cover" />
     </div>
     <div class="book-info">
-      <div class="text-large">{{ book.title }}</div>
+      <div class="text-3xl">{{ book.title }}</div>
       <div>by {{ book.author }}</div>
       <p class="book-description">{{ book.description }}</p>
       <button class="button" @click.stop="onClick">Add to Cart</button>
