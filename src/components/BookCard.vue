@@ -1,5 +1,5 @@
 <template>
-  <div class="book-card" @click="onBookCardClick">
+  <div class="book-card border-indigo-700" @click="onBookCardClick">
     <div class="book-card__image-wrapper">
       <img
         :src="book.imageUrl"
